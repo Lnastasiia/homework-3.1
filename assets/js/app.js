@@ -22,9 +22,25 @@ if(arrinputStr.length < 10 && checkSum != arrinputStr[9]){
 
 let date = new Date(1900, 0, 1);
 
-date.setDate(arrinputStr.slice(0, 5).join(""));
 
-console.log(`Дата рождения: ${date}`);
+let daysBday = arrinputStr.slice(0, 5).join("");
+let dateBday = new Date(1900, 0, (1+(+daysBday)-1));
+//console.log(dateBday);
+
+let arrdateBday = [dateBday.getDate(), dateBday.getMonth()+1, dateBday.getFullYear()]
+let Bday = arrdateBday.join('.');
+console.log(`Дата рождения: ${Bday}`);
+
+let currDate = new Date();
+//console.log(currDate);
+
+let age = new Date().getFullYear() - dateBday.getFullYear();
+
+if((currDate.getMonth() < dateBday.getMonth()) || (currDate.getMonth() == dateBday.getMonth()) && (currDate.getDate() < dateBday.getDate()) ){
+    age = age - 1;
+}
+console.log(`Полных лет: ${age}`);
+    
 
 
 
