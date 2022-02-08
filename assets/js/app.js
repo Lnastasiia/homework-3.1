@@ -24,7 +24,7 @@ let date = new Date(1900, 0, 1);
 
 
 let daysBday = arrinputStr.slice(0, 5).join("");
-let dateBday = new Date(1900, 0, (1+(+daysBday)-1));
+let dateBday = new Date(1900, 0, daysBday);
 //console.log(dateBday);
 
 let arrdateBday = [dateBday.getDate(), dateBday.getMonth()+1, dateBday.getFullYear()]
